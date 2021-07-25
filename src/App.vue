@@ -4,13 +4,7 @@
     <header-component></header-component>
 
     <main>
-      <ul>
-        <li>
-          <img :src="image" alt="">
-          <p>{{ hero.name }}</p>
-          <p>Jenis Hero: <em>{{ hero.type }}</em></p>
-        </li>
-      </ul>
+      <hero-component :hero="hero"></hero-component>
     </main>
 
     <footer-component></footer-component>
@@ -21,12 +15,14 @@
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import Hero from './components/Hero.vue'
 
 export default {
   name: 'App',
   components: {
     'header-component': Header,
-    'footer-component': Footer
+    'footer-component': Footer,
+    'hero-component': Hero
   },
   data: function() {
     return {
@@ -46,11 +42,7 @@ export default {
       }
     }
   },
-  computed: {
-    image: function() {
-      return require('./assets/hero/' + this.hero.image)
-    }
-  },
+  
 }
 </script>
 
