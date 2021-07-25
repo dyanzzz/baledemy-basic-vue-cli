@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-    <header>
-      <img alt="Vue logo" src="./assets/logo.png" width="200">
-      <h3>Mobile Legend : Bang bang</h3>
-      <button @click="changeHero">Change Hero</button>
-    </header>
+
+    <header-component></header-component>
 
     <main>
       <ul>
@@ -16,19 +13,20 @@
       </ul>
     </main>
 
-    <footer>
-      <p>&copy; 2021 - Kelas Vue CLI</p>
-    </footer>
+    <footer-component></footer-component>
+
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    'header-component': Header,
+    'footer-component': Footer
   },
   data: function() {
     return {
