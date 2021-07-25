@@ -20,6 +20,8 @@
   }
 </script>
 
-<style>
-  
+<style scoped>
+  p {
+    color: salmon;
+  }
 </style>

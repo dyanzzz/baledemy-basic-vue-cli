@@ -4,7 +4,8 @@
     <header-component @change-hero="changeHero"></header-component>
 
     <main>
-      <hero-component :hero="hero"></hero-component>
+      <hero-component :hero="hero1"></hero-component>
+      <hero-component :hero="hero2"></hero-component>
     </main>
 
     <footer-component></footer-component>
@@ -26,10 +27,15 @@ export default {
   },
   data: function() {
     return {
-      hero: {
+      hero1: {
         name: 'Aurora',
         type: 'Mage',
         image: 'aurora.jpg'
+      },
+      hero2: {
+        name: 'Zilong',
+        type: 'Figter',
+        image: 'zilong.jpg'
       }
     }
   },
