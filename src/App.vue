@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <header-component></header-component>
+    <header-component @change-hero="changeHero"></header-component>
 
     <main>
       <hero-component :hero="hero"></hero-component>
