@@ -5,10 +5,13 @@
 
     <main>
       <p>Hero-hero terbaik minggu ini</p>
-      <article>
+      <article v-if="!selectedHero">
         <template v-for="(item, index) in hero" >
           <hero-component :hero="item" :key="item.id" :index="index"></hero-component>
         </template>
+      </article>
+      <article v-else>
+        <hero-component :hero="selectedHero" :index="0"></hero-component>
       </article>
     </main>
 
@@ -86,16 +89,16 @@ export default {
           type: 'Marksman',
           image: 'lapulapu.jpg'
         }
-      ]
+      ],
+      selectedHero: ''
     }
   },
   methods: {
     changeHero: function() {
-      this.hero = {
-        name: 'Zilong',
-        type: 'Figter',
-        image: 'zilong.jpg'
-      }
+      this.selectedHero = this.randomHero()
+    },
+    randomHero: function() {
+      return this.hero[Math.floor(Math.random() * this.hero.length)]
     }
   },
   
