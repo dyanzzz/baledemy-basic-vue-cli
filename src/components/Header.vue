@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img alt="Vue logo" src="../assets/logo.png" width="200">
+    <img alt="Vue logo" src="../assets/logo.png" width="100">
       <h3>Mobile Legend : Bang bang</h3>
       <button @click="$emit('change-hero')">Change Hero</button>
   </header>

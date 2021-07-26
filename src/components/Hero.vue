@@ -2,8 +2,8 @@
   <ul>
     <li>
       <img :src="image" alt="">
-      <p>{{ hero.name }}</p>
-      <p>Jenis Hero: <em>{{ hero.type }}</em></p>
+      <p>{{ index+1 }}. {{ hero.name }}</p>
+      <p>Jenis Hero: <u>{{ hero.type }}</u></p>
     </li>
   </ul>
 </template>
@@ -11,7 +11,7 @@
 <script>
   export default {
     name: 'Hero',
-    props: ['hero'],
+    props: ['hero', 'index'],
     computed: {
       image: function() {
         return require('../assets/hero/' + this.hero.image)
@@ -22,6 +22,9 @@
 
 <style scoped>
   p {
-    color: salmon;
+    margin: 0;
+  }
+  li {
+    list-style: none;
   }
 </style>

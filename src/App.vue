@@ -4,9 +4,12 @@
     <header-component @change-hero="changeHero"></header-component>
 
     <main>
-      <template v-for="item in hero" >
-        <hero-component :hero="item" :key="item.id"></hero-component>
-      </template>
+      <p>Hero-hero terbaik minggu ini</p>
+      <article>
+        <template v-for="(item, index) in hero" >
+          <hero-component :hero="item" :key="item.id" :index="index"></hero-component>
+        </template>
+      </article>
     </main>
 
     <footer-component></footer-component>
@@ -40,6 +43,48 @@ export default {
           name: 'Zilong',
           type: 'Figter',
           image: 'zilong.jpg'
+        },
+        {
+          id: 3,
+          name: 'Akai',
+          type: 'Tank',
+          image: 'akai.jpg'
+        },
+        {
+          id: 4,
+          name: 'Bruno',
+          type: 'Marksman',
+          image: 'bruno.jpg'
+        },
+        {
+          id: 5,
+          name: 'Layla',
+          type: 'Marksman',
+          image: 'layla.jpg'
+        },
+        {
+          id: 6,
+          name: 'Lolita',
+          type: 'Marksman',
+          image: 'lolita.jpg'
+        },
+        {
+          id: 7,
+          name: 'Roger',
+          type: 'Marksman',
+          image: 'roger.jpg'
+        },
+        {
+          id: 8,
+          name: 'Nana',
+          type: 'Marksman',
+          image: 'nana.png'
+        },
+        {
+          id: 9,
+          name: 'Lapulapu',
+          type: 'Marksman',
+          image: 'lapulapu.jpg'
         }
       ]
     }
@@ -62,12 +107,21 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
+  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
 main img {
   width: 80px;
   border: 1px solid #ccc;
+}
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main {
+  text-align: center ;
 }
 </style>
