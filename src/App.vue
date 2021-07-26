@@ -4,8 +4,9 @@
     <header-component @change-hero="changeHero"></header-component>
 
     <main>
-      <hero-component :hero="hero1"></hero-component>
-      <hero-component :hero="hero2"></hero-component>
+      <template v-for="item in hero" >
+        <hero-component :hero="item" :key="item.id"></hero-component>
+      </template>
     </main>
 
     <footer-component></footer-component>
@@ -27,16 +28,20 @@ export default {
   },
   data: function() {
     return {
-      hero1: {
-        name: 'Aurora',
-        type: 'Mage',
-        image: 'aurora.jpg'
-      },
-      hero2: {
-        name: 'Zilong',
-        type: 'Figter',
-        image: 'zilong.jpg'
-      }
+      hero: [
+        {
+          id: 1,
+          name: 'Aurora',
+          type: 'Mage',
+          image: 'aurora.jpg'
+        },
+        {
+          id: 2,
+          name: 'Zilong',
+          type: 'Figter',
+          image: 'zilong.jpg'
+        }
+      ]
     }
   },
   methods: {
